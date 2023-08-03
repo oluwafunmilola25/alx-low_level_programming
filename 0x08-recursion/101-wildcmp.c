@@ -4,7 +4,6 @@
  * wildcmp - compares two strings
  * @s1: string pointer one
  * @s2: string pointer two
- * @s: string
  * Return: returns 1 if the string can be compared and 0 if not
  * @*: a special character
  */
