@@ -27,6 +27,6 @@ int actual_sqrt_recursion(int n, int h)
 	if (h * h > n)
 		return (-1);
 	if (h * h == n)
-		return (1);
+		return (h);
 	return (actual_sqrt_recursion(n, h + 1));
 }
