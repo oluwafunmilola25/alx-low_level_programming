@@ -8,24 +8,20 @@
 
 int is_palindrome(char *s)
 {
-	int a = 0;
-	char *b = s;
-	char *c = s;
+	if (*s == 0)
+		return (1);
+	return (calculate_palindrome(s, strlen_recursion(s)));
+}
 
-	while (*s != '\0')
-	{
-		a++;
-		s++;
-	}
-	c = (s - 1);
-	while (b < c)
-	{
-		if (*b != *c)
-		{
-			return (0);
-		}
-		b++;
-		c--;
-	}
-	return (1);
+/**
+ * strlen_recursion - checks the string
+ * @s: string
+ * Return: the length of the string
+ */
+
+int strlen_recursion(char *s)
+{
+	if (*s == '\0')
+		return (0);
+	return (1 + strlen_recursion(s + 1));
 }
