@@ -30,6 +30,10 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < num; i++)
 	{
+		if (i != 0)
+		{
+			printf(" ");
+		}
 		printf("%02x", main_ptr[i]);
 	}
 	printf("\n");
