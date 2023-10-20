@@ -16,7 +16,11 @@ void free_list(list_t *head)
 	while (unused != NULL)
 	{
 		node = unused->next;
+		if (unused->str)
+			free(unused->str);
+
 		free(unused);
+
 		unused = node;
 	}
 }
