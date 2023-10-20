@@ -1,12 +1,12 @@
 #include <stdio.h>
+#include "lists.h"
 
 /**
- * main - main function
+ * print_string - function for printing a string
  *
  * Return: success
  */
 
-void print_string(void) __attribute__((constructor));
 
 void print_string(void)
 {
