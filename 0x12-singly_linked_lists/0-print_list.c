@@ -2,13 +2,14 @@
 
 /**
  * print_list - prints all elements of a lists
- * @h:singly list parameter
- * Return:the number of nodes
+ * @h: singly list parameter
+ * Return: the number of nodes
  */
 
 size_t print_list(const list_t *h)
 {
 	size_t i;
+
 	i = 0;
 
 	while (h != NULL)
