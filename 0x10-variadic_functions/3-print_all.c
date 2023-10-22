@@ -10,42 +10,48 @@
 void print_all(const char * const format, ...)
 {
 	va_list print;
+	int b = 0;
 	int i;
-	char c, *s;
-	double f;
-	const char *formatnew = format;
+	char c;
+	char *s;
+	float f;
 
 	va_start(print, format);
-	while (*formatnew != '\0')
+	while (format && format[b])
 	{
-		if (*formatnew == 'c')
+		if (b > 0)
+		{
+			printf(", ");
+		}
+
+		if (format[b] == 'c')
 		{
 			c = va_arg(print, int);
-			printf("%c, ", c);
+			printf("%c", c);
 		}
-		else if (*formatnew == 'i')
+		else if (format[b] == 'i')
 		{
 			i = va_arg(print, int);
-			printf("%d, ", i);
+			printf("%d", i);
 		}
-		else if (*formatnew == 'f')
+		else if (format[b] == 'f')
 		{
 			f = va_arg(print, double);
-			printf("%f, ", f);
+			printf("%f", f);
 		}
-		else if (*formatnew == 's')
+		else if (format[b] == 's')
 		{
 			s = va_arg(print, char *);
-			if (s != NULL)
-			{
-				printf("%s", s);
-			}
-			else if (s == NULL)
+			if (s == NULL)
 			{
 				printf("(nil)");
 			}
+			else
+			{
+				printf("%s", s);
+			}
 		}
-		formatnew++;
+		b++;
 	}
 	va_end(print);
 	printf("\n");
