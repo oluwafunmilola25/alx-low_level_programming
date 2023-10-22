@@ -24,32 +24,33 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		}
 
-		if (format[b] == 'c')
+		switch (format[b])
 		{
-			c = va_arg(print, int);
-			printf("%c", c);
-		}
-		else if (format[b] == 'i')
-		{
-			i = va_arg(print, int);
-			printf("%d", i);
-		}
-		else if (format[b] == 'f')
-		{
-			f = va_arg(print, double);
-			printf("%f", f);
-		}
-		else if (format[b] == 's')
-		{
-			s = va_arg(print, char *);
-			if (s == NULL)
-			{
-				printf("(nil)");
-			}
-			else
-			{
-				printf("%s", s);
-			}
+			case 'c':
+				c = va_arg(print, int);
+				printf("%c", c);
+				break;
+			case 'i':
+				i = va_arg(print, int);
+				printf("%d", i);
+				break;
+			case 'f':
+				f = va_arg(print, double);
+				printf("%f", f);
+				break;
+			case 's':
+				s = va_arg(print, char *);
+				if (s == NULL)
+				{
+					printf("(nil)");
+				}
+				else
+				{
+					printf("%s", s);
+				}
+				break;
+			default:
+				break;
 		}
 		b++;
 	}
