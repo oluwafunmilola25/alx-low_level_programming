@@ -46,12 +46,11 @@ char **strtow(char *str)
 	c = string_count(str);
 	if (c == 0)
 		return (NULL);
-	
 	word = malloc(sizeof(char *) * (c + 1));
 	if (word == NULL)
 		return (NULL);
 
-	for (i = 0; i < length; i++)
+	for (i = 0; i <= length; i++)
 	{
 		if (str[i] == ' ' || str[i] == '\0')
 		{
