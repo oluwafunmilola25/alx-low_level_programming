@@ -11,32 +11,26 @@
 
 int is_digit(char *s)
 {
-	int i = 0;
-
-	while (s[i])
+	int i;
+	
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] < '0' || s[i] > '9')
 			return (0);
-		i++;
 	}
 	return (1);
 }
 
 /**
- * _strlen - calculates the length of string
- * @s: string
+ * mul - multiplies two integer
+ * @num1: parameter 1
+ * @num2: parameter 2
  * Return: length
  */
 
-int _strlen(char *s)
+int mul(int num1, int num2)
 {
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	return num1 * num2;
 }
 
 /**
@@ -66,13 +60,13 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 
-	if (num1 == 0 || num2 == 0)
+	if (num1 <= 0 || num2 <= 0)
 	{
 		printf("Error\n");
 		exit(98);
 	}
 
-	result = num1 * num2;
+	result = mul(num1, num2);
 	printf("%d\n", result);
 
 	return (0);
