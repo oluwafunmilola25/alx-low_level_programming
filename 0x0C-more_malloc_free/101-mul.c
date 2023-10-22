@@ -1,5 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "main.h"
+
+/**
+ * is_digit - checks a string
+ * @s: string
+ * Return: 0 or 1
+ */
+
+int is_digit(char *s)
+{
+	int i = 0;
+
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+/**
+ * _strlen - calculates the length of string
+ * @s: string
+ * Return: length
+ */
+
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 /**
  * main - a program that multiplies two numbers
@@ -20,6 +58,11 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
+	if (!is_digit(argv[1]) || !is_digit(argv[2]))
+	{
+		printf("Error\n");
+		return (98);
+	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 
